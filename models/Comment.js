@@ -9,14 +9,14 @@ const Comment = new mongoose.Schema ({
     type: String,
     required: true
   },
-  channel: {id:mongoose.Types.Objectid, ref: "Channel"},
+  channel: {id:mongoose.Types.ObjectId, ref: "Channel"},
   createdAt: {
     type: Date,
-    default: Date.now()
+    default: Date.now
   },
   updateAt: {
     type: Date,
-    default: Date.now()
+    default: Date.now
   }
 })
 

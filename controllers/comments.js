@@ -14,7 +14,7 @@ class commentsControllers {
       const comments = new Comments ({
         userName: req.body.userName,
         text: req.body.text,
-        channels: req.params.id
+        channel: req.params.id
       })
       await res.save(comments)
       res.json(comments)
