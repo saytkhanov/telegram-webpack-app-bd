@@ -9,9 +9,17 @@ class channelsController {
       res.json(e.message)
     }
   }
+  async getAllChannels(req, res) {
+    try {
+      const channels = await Channels.find()
+      res.json(channels)
+    } catch (e) {
+      res.json(e.message)
+    }
+  }
   async getChannelsByCategory(req, res) {
     try {
-      const channels = await Channels.findById({category: req.params.id})
+      const channels = await Channels.find({category: req.params.id})
       res.json(channels)
     } catch (e) {
       res.json(e.message)
@@ -25,7 +33,7 @@ class channelsController {
         text: req.body.text,
         category: req.params.id
       })
-      await res.save(channels)
+      await channels.save()
       res.json(channels)
     } catch (e) {
       res.json(e.message)
