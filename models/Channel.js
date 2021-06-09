@@ -14,7 +14,7 @@ const Channel = new mongoose.Schema({
     type: String,
     required: true
   },
-  category: {id: mongoose.Types.ObjectId, ref: "Category"},
+  category: {type: mongoose.Types.ObjectId, ref: "Category"},
 
   createdAt: {
     type: Date,
