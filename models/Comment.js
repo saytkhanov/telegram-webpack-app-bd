@@ -12,11 +12,11 @@ const Comment = new mongoose.Schema ({
   channel: {id:mongoose.Types.ObjectId, ref: "Channel"},
   createdAt: {
     type: Date,
-    default: Date.now()
+    default: Date.now
   },
   updateAt: {
     type: Date,
-    default: Date.now()
+    default: Date.now
   }
 })
 
