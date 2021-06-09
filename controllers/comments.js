@@ -3,7 +3,7 @@ const Comments = require('../models/Comment');
 class commentsControllers {
   async getCommentsByChannel(req, res) {
     try {
-      const comments = await Comments.findById({channel: req.params.id})
+      const comments = await Comments.find({channel: req.params.id})
       res.json(comments)
     }catch (e) {
       console.log(e.message)
@@ -16,7 +16,7 @@ class commentsControllers {
         text: req.body.text,
         channel: req.params.id
       })
-      await res.save(comments)
+      await comments.save()
       res.json(comments)
     }catch (e) {
       console.log(e.message)
