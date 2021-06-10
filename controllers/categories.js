@@ -2,8 +2,12 @@ const Category = require('../models/Category');
 
 const controllers = {
   getCategories: async (req,res) => {
-    const getCategories = await Category.find({}).lean
+    const getCategories = await Category.find()
     res.json(getCategories)
+  },
+  getCategoriesId: async (req, res) => {
+    const getCategoriesId = await Category.findById(req.params._id)
+    res.json(getCategoriesId)
   },
   postCategories: async (req, res) => {
     const postCategories = await new Category({
